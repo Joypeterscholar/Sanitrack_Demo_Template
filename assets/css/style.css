@@ -1,0 +1,709 @@
+/* ==========================================
+   SaniTrack Experience Portal
+   Theme v1.0
+==========================================*/
+
+:root{
+
+    --sidebar:#241533;
+    --sidebar2:#2d1b3f;
+
+    --pink:#E65CB3;
+    --pink-dark:#d6429d;
+
+    --lavender:#D9DAFF;
+    --blue:#2F66F5;
+
+    --white:#ffffff;
+    --light:#f7f8fc;
+
+    --text:#1b2230;
+    --text-light:#6b7280;
+
+    --shadow:0 15px 35px rgba(36,21,51,.12);
+
+    --radius:22px;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:#ffffff;
+    overflow-x:hidden;
+    color:var(--text);
+
+}
+
+/*==========================
+BACKGROUND
+===========================*/
+
+.background-shape{
+
+    position:fixed;
+    z-index:-2;
+    border-radius:50%;
+    filter:blur(0px);
+
+}
+
+.background-shape.left{
+
+    width:650px;
+    height:650px;
+
+    left:-250px;
+    bottom:-220px;
+
+    background:#1c57ea;
+
+    opacity:.95;
+
+}
+
+.background-shape.right{
+
+    width:650px;
+    height:650px;
+
+    right:-220px;
+    top:-250px;
+
+    background:
+    repeating-linear-gradient(
+        -45deg,
+        #1558ea,
+        #1558ea 35px,
+        transparent 35px,
+        transparent 70px
+    );
+
+    border-radius:40%;
+
+    opacity:.9;
+
+}
+
+/*==========================
+LOGO
+===========================*/
+
+.brand-logo{
+
+    position:absolute;
+
+    top:45px;
+    left:60px;
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+}
+
+.brand-logo img{
+
+    width:70px;
+    height:70px;
+    object-fit:contain;
+
+}
+
+.brand-logo h3{
+
+    font-size:34px;
+    font-weight:700;
+    color:#241533;
+
+}
+
+/*==========================
+WRAPPER
+===========================*/
+
+.login-wrapper{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+
+}
+
+/*==========================
+CARD
+===========================*/
+
+.login-card{
+
+    width:560px;
+
+    background:rgba(217,218,255,.85);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:28px;
+
+    padding:55px;
+
+    box-shadow:var(--shadow);
+
+    animation:fadeUp .8s ease;
+
+}
+
+/*==========================
+WELCOME
+===========================*/
+
+.badge-demo{
+
+    display:inline-block;
+
+    padding:10px 18px;
+
+    background:var(--pink);
+
+    color:white;
+
+    border-radius:100px;
+
+    font-size:14px;
+
+    margin-bottom:22px;
+
+    font-weight:600;
+
+}
+
+.welcome h1{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.welcome p{
+
+    color:#52596b;
+
+    line-height:1.8;
+
+    font-size:17px;
+
+    margin-bottom:35px;
+
+}
+
+/*==========================
+FORM
+===========================*/
+
+.form-group{
+
+    margin-bottom:25px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    font-size:15px;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+.form-group input{
+
+    width:100%;
+
+    height:60px;
+
+    border:none;
+
+    outline:none;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:0 22px;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.form-group input:focus{
+
+    box-shadow:0 0 0 4px rgba(47,102,245,.15);
+
+}
+
+/*==========================
+ROLE
+===========================*/
+
+.role-select{
+
+    margin-bottom:30px;
+
+}
+
+.role-select label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+.role-select select{
+
+    width:100%;
+
+    height:60px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    padding:0 18px;
+
+    font-size:16px;
+
+    background:white;
+
+}
+
+/*==========================
+PASSWORD
+===========================*/
+
+.password-box{
+
+    position:relative;
+
+}
+
+.password-box i{
+
+    position:absolute;
+
+    top:50%;
+
+    right:20px;
+
+    transform:translateY(-50%);
+
+    cursor:pointer;
+
+    color:#666;
+
+}
+
+/*==========================
+REMEMBER
+===========================*/
+
+.remember{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:28px;
+
+    color:#666;
+
+}
+
+.remember input{
+
+    width:18px;
+    height:18px;
+
+}
+
+/*==========================
+BUTTON
+===========================*/
+
+#loginBtn{
+
+    width:100%;
+
+    height:64px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    background:#2F66F5;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+#loginBtn:hover{
+
+    background:#1d52dd;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 20px 40px rgba(47,102,245,.35);
+
+}
+
+/*==========================
+DEMO USERS
+===========================*/
+
+.demo-users{
+
+    margin-top:45px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+}
+
+.demo-users h6{
+
+    color:#241533;
+
+    font-size:17px;
+
+    margin-bottom:18px;
+
+}
+
+.account{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 0;
+
+    border-bottom:1px solid #ececec;
+
+    font-size:15px;
+
+}
+
+.account:last-child{
+
+    border-bottom:none;
+
+}
+
+.account span{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+/*==========================
+NARRATOR
+===========================*/
+
+.narrator{
+
+    position:fixed;
+
+    right:35px;
+    bottom:35px;
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:18px 22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.pulse{
+
+    width:16px;
+    height:16px;
+
+    border-radius:50%;
+
+    background:#2F66F5;
+
+    animation:pulse 1.8s infinite;
+
+}
+
+.narrator h5{
+
+    margin:0;
+    font-size:16px;
+
+}
+
+.narrator small{
+
+    color:#777;
+
+}
+
+#playVoice{
+
+    border:none;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:#2F66F5;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#playVoice:hover{
+
+    transform:scale(1.1);
+
+}
+
+/*==========================
+ANIMATIONS
+===========================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        box-shadow:
+        0 0 0 0 rgba(47,102,245,.6);
+
+    }
+
+    70%{
+
+        box-shadow:
+        0 0 0 16px rgba(47,102,245,0);
+
+    }
+
+    100%{
+
+        box-shadow:
+        0 0 0 0 rgba(47,102,245,0);
+
+    }
+
+}
+
+/*==========================
+RESPONSIVE
+===========================*/
+
+@media(max-width:992px){
+
+.brand-logo{
+
+left:25px;
+top:20px;
+
+}
+
+.brand-logo h3{
+
+font-size:26px;
+
+}
+
+.login-card{
+
+width:100%;
+padding:35px;
+
+}
+
+.welcome h1{
+
+font-size:34px;
+
+}
+
+.background-shape.left{
+
+width:420px;
+height:420px;
+
+}
+
+.background-shape.right{
+
+width:420px;
+height:420px;
+
+}
+
+.narrator{
+
+left:20px;
+right:20px;
+bottom:20px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.login-wrapper{
+
+padding:20px;
+
+}
+
+.login-card{
+
+padding:28px;
+
+}
+
+.welcome h1{
+
+font-size:30px;
+
+}
+
+.welcome p{
+
+font-size:15px;
+
+}
+
+.brand-logo{
+
+position:relative;
+
+left:0;
+
+top:20px;
+
+justify-content:center;
+
+margin-bottom:30px;
+
+}
+
+.brand-logo img{
+
+width:55px;
+height:55px;
+
+}
+
+.brand-logo h3{
+
+font-size:24px;
+
+}
+
+.account{
+
+flex-direction:column;
+align-items:flex-start;
+gap:6px;
+
+}
+
+#loginBtn{
+
+height:58px;
+
+}
+
+
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaniTrack Sandbox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/sandbox.css" />
+</head>
+<body>
+  <header class="sandbox-header">
+    <div class="brand-block">
+      <div class="brand-mark">S</div>
+      <div>
+        <h1>SaniTrack Sandbox</h1>
+        <p>Manager → Supervisor → Cleaner workflow</p>
+      </div>
+    </div>
+    <div class="header-meta">
+      <div class="pill">Facility: Food Processing</div>
+      <div class="pill" id="liveClock">🕒 --:--</div>
+      <div class="pill strong" id="progressValue">0%</div>
+      <div class="pill">Joy (Guest)</div>
+      <a class="pill guest-link" href="index.html">Back to SaniTrack</a>
+    </div>
+  </header>
+
+  <div class="guest-banner" id="guestBanner" hidden>
+    <div>
+      <div class="eyebrow">Guest Demo Mode</div>
+      <h3 id="guestBannerTitle">Welcome to the SaniTrack guest experience</h3>
+      <p id="guestBannerText">Resume your last walkthrough or start a fresh demo from the beginning.</p>
+    </div>
+    <div class="guest-banner-actions">
+      <button class="guest-banner-btn primary" id="guestResumeBtn">Resume Last Session</button>
+      <button class="guest-banner-btn" id="guestStartBtn">Start Fresh</button>
+      <a class="guest-banner-link" href="index.html">Back to SaniTrack</a>
+    </div>
+  </div>
+
+  <div class="sandbox-shell">
+    <aside class="sidebar">
+      <h2>Workflow Board</h2>
+      <p>Switch roles to follow the same task lifecycle as the Storylane flow.</p>
+      <div class="role-switcher" id="roleSwitcher"></div>
+
+      <div class="scenario-block">
+        <div class="eyebrow">Scenario Library</div>
+        <div class="scenario-list" id="scenarioList"></div>
+      </div>
+
+      <div class="task-card">
+        <div class="eyebrow">Current Task</div>
+        <h3 id="taskTitle">Zone A3 Deep Cleaning</h3>
+        <div class="status-pill" id="taskStatus">Pending Assignment</div>
+        <p id="taskDetails">Manager assigns the task to the supervisor and cleaner.</p>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <section class="hero-card">
+        <div>
+          <p class="eyebrow">Workflow Progress</p>
+          <h2 id="workflowTitle">Task Assignment</h2>
+          <p id="workflowDescription">The manager assigns the task, the supervisor reviews it, and the cleaner completes it with evidence.</p>
+        </div>
+        <div class="hero-badge" id="workflowBadge">Manager View</div>
+      </section>
+
+      <section class="summary-grid">
+        <div class="panel summary-panel">
+          <div class="panel-head">
+            <h3>Demo Summary</h3>
+            <span id="summaryLabel">Guest snapshot</span>
+          </div>
+          <div class="summary-metrics">
+            <div class="summary-card">
+              <span class="summary-label">Stage</span>
+              <strong id="summaryStage">Task Assignment</strong>
+            </div>
+            <div class="summary-card">
+              <span class="summary-label">Role</span>
+              <strong id="summaryRole">Manager</strong>
+            </div>
+            <div class="summary-card">
+              <span class="summary-label">Next step</span>
+              <strong id="summaryNext">Assign the task</strong>
+            </div>
+          </div>
+          <div class="summary-footer">
+            <div class="summary-chip" id="summaryProgressChip">Progress 10%</div>
+            <div class="summary-chip accent" id="summaryRoleHint">Next role: Manager</div>
+            <div class="summary-chip success" id="summaryStreakChip">Milestone 1 of 8</div>
+            <div class="summary-chip" id="summaryUpdatedChip">Last updated just now</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel-grid">
+        <div class="panel simulator-panel">
+          <div class="panel-head">
+            <h3>Simulator</h3>
+            <span id="simulatorLabel">Auto-guided walkthrough</span>
+          </div>
+          <p class="simulator-copy">Let the sandbox run the workflow automatically so you can watch the handoff unfold.</p>
+          <div class="simulator-actions">
+            <button class="simulator-btn primary" id="startSimulatorBtn">Start Auto Demo</button>
+            <button class="simulator-btn" id="pauseSimulatorBtn">Pause</button>
+            <button class="simulator-btn" id="resetSimulatorBtn">Reset</button>
+          </div>
+          <div class="simulator-mode-row">
+            <button class="simulator-mode-btn active" data-mode="standard" id="simulatorStandardBtn">Standard Flow</button>
+            <button class="simulator-mode-btn" data-mode="incident" id="simulatorIncidentBtn">Incident Response</button>
+          </div>
+          <div class="simulator-status" id="simulatorStatus">Ready to launch</div>
+          <div class="simulator-story" id="simulatorStory">The demo will guide you through assignment, acknowledgement, execution, review, and approval.</div>
+          <div class="simulator-progress" aria-hidden="true">
+            <div class="simulator-progress-bar" id="simulatorProgressBar"></div>
+          </div>
+          <div class="simulator-operator" id="simulatorOperator">Operator: monitoring handoff...</div>
+          <div class="simulator-outcome" id="simulatorOutcome">Awaiting handoff</div>
+          <div class="simulator-decision" id="simulatorDecisionPanel">
+            <div class="decision-title">Decision moment</div>
+            <div class="decision-copy" id="simulatorDecisionCopy">Choose how the team should respond during review.</div>
+            <div class="simulator-actions decision-actions">
+              <button class="simulator-btn primary" id="branchEscalateBtn">Escalate issue</button>
+              <button class="simulator-btn" id="branchContinueBtn">Continue review</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h3>Task Timeline</h3>
+            <span id="timelineLabel">Live workflow</span>
+          </div>
+          <div id="timeline" class="timeline"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h3>Role Actions</h3>
+            <span id="roleLabel">Manager controls</span>
+          </div>
+          <div id="roleActions" class="role-actions"></div>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>Evidence & Notes</h3>
+            <span id="evidenceLabel">Waiting for evidence</span>
+          </div>
+          <div id="evidenceBox" class="evidence-box"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h3>Activity Feed</h3>
+            <span>Live updates</span>
+          </div>
+          <ul id="activityFeed" class="activity-feed"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/sandbox.js"></script>
+</body>
+</html>

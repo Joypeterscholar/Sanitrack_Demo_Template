@@ -1,6 +1,6 @@
 Executive Overview
-Chapter 1
-Executive Summary
+
+Chapter 1 - Executive Summary
 1.1 Introduction
 SaniTrack is a digital facility management platform designed to help organizations plan, assign, execute, monitor, and report on cleaning and sanitation operations across multiple facilities. It provides visibility into workforce activities, inventory usage, inspections, incidents, compliance, and operational performance through a centralized dashboard.
 While the platform offers comprehensive functionality, demonstrating its value to prospective customers currently depends on manually prepared demonstrations and static sample data. This approach does not accurately reflect the dynamic nature of real-world facility operations and can make it difficult for potential customers to appreciate the platform's full capabilities.

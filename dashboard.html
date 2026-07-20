@@ -1,0 +1,167 @@
+<div class="wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <!-- Logo -->
+
+        <!-- Navigation -->
+
+        <!-- User -->
+
+    </aside>
+
+
+    <main class="dashboard-content">
+
+        <!-- Dashboard Title -->
+
+        <header class="dashboard-header">
+
+            <h1>SaniTrack Demo Dashboard</h1>
+
+            <p>Interactive Training Environment</p>
+
+        </header>
+
+
+        <!-- KPI Cards -->
+
+        <div class="dashboard-grid">
+
+            <div class="kpi-card">
+                <h3>Open</h3>
+                <span id="kpiOpen">0</span>
+            </div>
+
+            <div class="kpi-card">
+                <h3>Assigned</h3>
+                <span id="kpiAssigned">0</span>
+            </div>
+
+            <div class="kpi-card">
+                <h3>In Progress</h3>
+                <span id="kpiProgress">0</span>
+            </div>
+
+            <div class="kpi-card">
+                <h3>Review</h3>
+                <span id="kpiReview">0</span>
+            </div>
+
+            <div class="kpi-card">
+                <h3>Approved</h3>
+                <span id="kpiApproved">0</span>
+            </div>
+
+            <div class="kpi-card">
+                <h3>Rework</h3>
+                <span id="kpiRework">0</span>
+            </div>
+
+        </div>
+
+
+        <!-- Simulator Controls -->
+
+        <section class="dashboard-section">
+
+            <h2>Simulation Controls</h2>
+
+            <button id="startBtn">Start Simulation</button>
+
+            <button id="pauseBtn">Pause</button>
+
+            <button id="resumeBtn">Resume</button>
+
+            <button id="resetBtn">Reset</button>
+
+        </section>
+
+
+        <!-- Current Simulation -->
+
+        <section class="dashboard-section">
+
+            <h2>Current Simulation</h2>
+
+            <div id="simulationStatus">
+
+                Ready...
+
+            </div>
+
+        </section>
+
+
+        <!-- Scenario Library -->
+
+        <section class="dashboard-section">
+
+            <h2>Scenario Library</h2>
+
+            <div id="scenarioList"></div>
+
+        </section>
+
+
+        <!-- Notifications -->
+
+        <section class="dashboard-section">
+
+            <h2>Notifications</h2>
+
+            <div id="notificationPanel"></div>
+
+        </section>
+
+
+        <!-- Active Tasks -->
+
+        <section class="dashboard-section">
+
+            <h2>Tasks</h2>
+
+            <div id="taskList"></div>
+
+        </section>
+
+
+        <!-- Activity Feed -->
+
+        <section class="dashboard-section">
+
+            <h2>Live Activity Feed</h2>
+
+            <div id="activityFeed"></div>
+
+        </section>
+
+
+        <!-- Storylane -->
+
+        <section class="dashboard-section">
+
+            <h2>Interactive Demo</h2>
+
+            <div class="storylane-container">
+
+                <iframe
+                    src="YOUR_STORYLANE_LINK"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="assets/js/simulator.js"></script>
+<script src="assets/js/simulator-storage.js"></script>
+<script src="assets/js/scenario-engine.js"></script>
+<script src="assets/js/notification-center.js"></script>
+<script src="assets/js/activity-feed.js"></script>
+<script src="assets/js/app.js"></script>

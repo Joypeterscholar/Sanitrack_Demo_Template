@@ -419,6 +419,49 @@ button {
     touch-action: manipulation;
 }
 
+
+.mobile-nav{
+
+display:none;
+
+}
+
+@media (max-width:768px){
+
+.mobile-nav{
+
+display:flex;
+
+position:fixed;
+
+top:15px;
+
+left:15px;
+
+z-index:9999;
+
+}
+
+.mobile-nav button{
+
+background:#2F66F5;
+
+color:white;
+
+border:none;
+
+padding:12px 18px;
+
+border-radius:25px;
+
+font-weight:600;
+
+box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+}
+
+}
+
 /* Storylane */
 
 .demo{
@@ -695,5 +738,12 @@ menuBtn.addEventListener("click", function () {
 </script>
 
 </body>
+<div class="mobile-nav">
+
+    <button onclick="location.href='hub.html'">
+        ← Exit Demo
+    </button>
+
+</div>
 
 </html>

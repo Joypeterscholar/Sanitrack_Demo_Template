@@ -25,6 +25,8 @@ body{
 font-family:Poppins,sans-serif;
 background:#F5F7FC;
 overflow:hidden;
+overflow-y:auto;
+
 
 }
 
@@ -45,6 +47,68 @@ justify-content:space-between;
 padding:0 30px;
 
 box-shadow:0 4px 15px rgba(0,0,0,.06);
+
+}
+
+@media(max-width:768px){
+
+.topbar{
+
+padding:10px;
+
+flex-wrap:wrap;
+
+height:auto;
+
+}
+
+}
+
+.demo{
+
+flex:1;
+
+}
+
+@media(max-width:768px){
+
+.demo{
+
+width:100%;
+
+height:calc(100vh - 170px);
+
+}
+
+}
+
+
+
+#menuBtn{
+
+display:none;
+
+background:none;
+
+border:none;
+
+font-size:28px;
+
+cursor:pointer;
+
+color:#241533;
+
+margin-right:10px;
+
+}
+
+@media(max-width:768px){
+
+#menuBtn{
+
+display:block;
+
+}
 
 }
 
@@ -100,6 +164,16 @@ font-weight:600;
 
 }
 
+@media(max-width:768px){
+
+.badge{
+
+display:none;
+
+}
+
+}
+
 .timer{
 
 background:#F8F8F8;
@@ -129,12 +203,21 @@ font-weight:600;
 }
 
 /* Main */
-
 .wrapper{
 
 display:flex;
-
 height:calc(100vh - 75px);
+
+}
+
+@media(max-width:768px){
+
+.wrapper{
+
+flex-direction:column;
+height:auto;
+
+}
 
 }
 
@@ -151,6 +234,34 @@ color:white;
 padding:30px;
 
 overflow:auto;
+transition:.3s;
+
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+
+position:fixed;
+
+left:-100%;
+
+top:75px;
+
+width:280px;
+
+height:100%;
+
+z-index:999;
+
+}
+
+.sidebar.open{
+
+left:0;
+
+}
 
 }
 
@@ -208,6 +319,34 @@ border-radius:18px;
 
 }
 
+.audioBtn{
+
+position:fixed;
+
+bottom:90px;
+
+right:20px;
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+background:#2F66F5;
+
+color:white;
+
+}
+
+iframe{
+
+width:100%;
+height:100%;
+border:none;
+
+}
+
 .guide h5{
 
 margin-bottom:10px;
@@ -234,6 +373,16 @@ font-weight:600;
 
 }
 
+button,
+.badge,
+.progress-item {
+    min-height: 44px;
+}
+
+button {
+    touch-action: manipulation;
+}
+
 /* Storylane */
 
 .demo{
@@ -256,11 +405,13 @@ border:none;
 
 .footer{
 
-position:absolute;
+position:fixed;
 
-bottom:20px;
+bottom:15px;
 
-right:20px;
+right:15px;
+
+left: 15px;
 
 background:white;
 
@@ -286,6 +437,9 @@ border-radius:12px;
 
 font-weight:600;
 
+width:100%;
+
+
 }
 
 </style>
@@ -299,54 +453,43 @@ font-weight:600;
 <source src="assets/audio/storylane.mp3">
 
 </audio>
-
 <div class="topbar">
 
-<div class="left">
+    <div class="left">
 
-<img src="assets/images/logo.png" class="logo">
+        <button id="menuBtn">
+            ☰
+        </button>
 
-<div class="title">
+        <img src="assets/images/logo.png" class="logo">
 
-SaniTrack Interactive Demo
+        <div class="title">
+            SaniTrack Interactive Demo
+        </div>
 
-</div>
+    </div>
 
-</div>
+    <div class="right">
 
-<div class="right">
+        <div class="badge" id="facility">
+            Facility
+        </div>
 
-<div class="badge" id="facility">
+        <div class="badge" id="role">
+            Role
+        </div>
 
-Facility
+        <div class="timer">
+            <span id="time">00:00</span>
+        </div>
 
-</div>
+        <button
+            class="exit"
+            onclick="location.href='hub.html'">
+            Exit Demo
+        </button>
 
-<div class="badge" id="role">
-
-Role
-
-</div>
-
-<div class="timer">
-
-<span id="time">
-
-00:00
-
-</span>
-
-</div>
-
-<button
-class="exit"
-onclick="location.href='hub.html'">
-
-Exit Demo
-
-</button>
-
-</div>
+    </div>
 
 </div>
 
@@ -502,6 +645,16 @@ String(m).padStart(2,'0')
 String(s).padStart(2,'0');
 
 },1000);
+
+const menuBtn = document.getElementById("menuBtn");
+
+const sidebar = document.querySelector(".sidebar");
+
+menuBtn.addEventListener("click", function () {
+
+    sidebar.classList.toggle("open");
+
+});
 
 </script>
 

@@ -23,8 +23,7 @@
 
     <!-- Font Awesome -->
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- CSS -->
 
@@ -106,9 +105,7 @@
 
                 <label>Email</label>
 
-                <input id="email"
-                    type="email"
-                    placeholder="Enter demo email">
+                <input id="email" type="email" placeholder="Enter demo email">
 
             </div>
 
@@ -118,13 +115,9 @@
 
                 <div class="password-box">
 
-                    <input
-                        id="password"
-                        type="password"
-                        placeholder="Password">
+                    <input id="password" type="password" placeholder="Password">
 
-                    <i
-                        class="fa-solid fa-eye toggle-password">
+                    <i class="fa-solid fa-eye toggle-password">
                     </i>
 
                 </div>
@@ -133,15 +126,13 @@
 
             <div class="remember">
 
-                <input
-                    type="checkbox">
+                <input type="checkbox">
 
                 Remember Me
 
             </div>
 
-            <button
-                id="loginBtn">
+            <button id="loginBtn">
 
                 Enter Experience
 
@@ -217,8 +208,7 @@
 
             </div>
 
-            <button
-                id="playVoice">
+            <button id="playVoice">
 
                 ▶
 
@@ -230,14 +220,27 @@
 
     <!-- Audio -->
 
-    <audio
-        id="voice">
+    <audio id="voice">
 
-        <source
-            src="assets/audio/login.mp3"
-            type="audio/mpeg">
+        <source src="assets/audio/login.mp3" type="audio/mpeg">
 
     </audio>
+    <script src="https://js.sentry-cdn.com/4ed263d6d53e4d663b3ce9daea6ab907.min.js" crossorigin="anonymous">
+    </script>
+
+    <script>
+
+        Sentry.init({
+            dsn: "https://4ed263d6d53e4d663b3ce9daea6ab907@o4511745455554560.ingest.us.sentry.io/4511767040557056",
+
+            tracesSampleRate: 1.0,
+
+            environment: "production",
+
+            release: "sanitrack-demo-v1"
+        });
+    </script>
+
 
     <!-- Bootstrap -->
 

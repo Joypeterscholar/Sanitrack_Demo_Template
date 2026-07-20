@@ -180,3 +180,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+window.onerror = function(message, source, lineno, colno, error) {
+
+    if (window.Sentry && error) {
+        Sentry.captureException(error);
+    }
+
+};
